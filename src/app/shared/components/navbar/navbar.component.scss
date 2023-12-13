@@ -1,0 +1,20 @@
+
+// .navbar-dark .navbar-nav .nav-link {
+//     color: #fff;
+// }
+
+// .nav-link:hover,
+// .nav-link:focus,
+// .nav-link:active{
+// background-color: #000;
+// color: #fff;
+// }
+
+a:hover,
+a:focus,
+a:active
+ {
+    color: #0056b3;
+    background-color: #fff;
+    text-decoration: none;
+}

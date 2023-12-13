@@ -1,0 +1,150 @@
+
+
+
+    <div class="section" 
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact:true}"
+    >
+        <div class="row">
+    
+            <form  *ngIf="isHavingAcc" class="signInform" 
+            routerLink=""
+            >
+                <div class="card " >
+                    <div class="card-body">
+                        <h3 class="text-center my-3">Sign Up</h3>
+                        <div class="form-group">
+                            <label class="sr-only" for="inlineFormInputGroupUsername">Username</label>
+                            <div class="input-group">
+                              
+                              <input type="email" 
+                              class="form-control" 
+                              id="inlineFormInputGroupUsername" 
+                              placeholder="Username"
+                              appBlockCopyPaste
+                              required>
+                              <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-group">
+                                <label class="sr-only" for="inlineFormInputGroupUsername">Password</label>
+                                <div class="form-group">
+                                    <label class="sr-only" for="inlineFormInputGroupUsername">Confirm Password</label>
+                                    <div class="input-group">
+                                      
+                                      <input [type]="passType ? 'password' : 'text'" class="form-control" id="password" placeholder="password"
+                                      pattern="(?=.*\d)(?=.*[\W_]).{7,}" title="Minimum of 7 characters. Should have at least one special character and one number."
+                                      required
+                                      appBlockCopyPaste>
+                                      <div class="input-group-prepend">
+                                        <div class="input-group-text" 
+                                        (click)="onPassword()">
+                                            <i class="fa-solid "
+                                            [ngClass]=" visisble ? 'fa-eye-slash' :'fa-eye'"
+                                            ></i>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                  
+                                  <input [type]="passType ? 'password' : 'text'" class="form-control" id="password" placeholder="Confirm Password"
+                                  appBlockCopyPaste
+                                  pattern="(?=.*\d)(?=.*[\W_]).{7,}" title="Minimum of 7 characters. Should have at least one special character and one number."
+                                  required
+                                  >
+                                  <div class="input-group-prepend">
+                                    <div class="input-group-text" 
+                                    (click)="onPassword()">
+                                        <i class="fa-solid "
+                                        [ngClass]=" visisble ? 'fa-eye-slash' :'fa-eye'"
+                                        ></i>
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <button class="btn btn-primary">Sign Up</button>
+                        </div>
+                        <p 
+                        
+                        (click)="isHavingAcc =!isHavingAcc"
+                        >
+                            <a href="javascript:;" class="btn btn-link">
+                                Go to Login
+                            </a>
+                        </p>
+                    </div>
+                </div>
+              </form>
+    
+            <form  *ngIf="!isHavingAcc" class="signInform">
+                <div class="card  " >
+                    <div class="card-body">
+                        <h3 class="text-center my-3">Login</h3>
+                        <div class="form-group">
+                            <label class="sr-only" for="inlineFormInputGroupUsername">Username</label>
+                            <div class="input-group">
+                              <input type="email" class="form-control" id="inlineFormInputGroupUsername" 
+                              placeholder="Username"
+                              #username
+                              appBlockCopyPaste
+                              required
+                              >
+                              <div class="input-group-prepend">
+                                <div class="input-group-text" 
+                                >
+                                <i class="fa-solid fa-user"></i>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-group">
+                                <label class="sr-only" for="inlineFormInputGroupUsername">Password</label>
+                                <div class="input-group">
+                                  
+                                  <input [type]="passType ? 'password' : 'text'"
+                                   class="form-control"
+                                   id="password" 
+                                  placeholder="password"
+                                  #password
+                                  appBlockCopyPaste
+                                  pattern="(?=.*\d)(?=.*[\W_]).{7,}" title="Minimum of 7 characters. Should have at least one special character and one number."
+                                  required
+                                  >
+                                  <div class="input-group-prepend">
+                                    <div class="input-group-text" 
+                                    (click)="onPassword()">
+                                        <i class="fa-solid "
+                                        [ngClass]=" visisble ? 'fa-eye-slash' :'fa-eye'"
+                                        ></i>
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <button class="btn btn-primary"
+                            (click)="logIn(username.value,password.value)"
+                            >Log In</button>
+                        </div>
+                        <span 
+                        (click)="isHavingAcc = !isHavingAcc"
+                        >
+                            <a href="javascript:;" class="btn btn-link">
+                                Not Have Account?
+                            </a>
+                        </span>
+                    </div>
+                </div>
+              </form>
+         </div>
+        </div>
+

@@ -1,0 +1,32 @@
+
+
+<form  class="mt-5">
+    <div class="form-group">
+        <input type="text" class="form-control"  #userValue
+        [value]="uobj ? uobj.userName : ''"
+        [disabled]="!canEditUser"
+        >
+    </div>
+    <div class="form-group">
+        <select name="" id="" class="form-control"  #role
+        [value]="uobj ? uobj.editStatus : ''"
+        [disabled]="!canEditUser"
+        >
+            <option value="">Select</option>
+            <option value="admin">Admin</option>
+            <option value="candidate">Candidate</option>
+        </select>
+    </div>
+    <div class="text-center ">
+        <button class="btn btn-success" *ngIf="uid ; else noUser"
+        (click)="updateUser(userValue.value,role)"
+        [disabled]="!canEditUser"
+        >Update Details</button>
+
+        <ng-template #noUser>
+            <button class="btn btn-primary"
+            (click)="addNewUser(userValue,role)"
+            >Add User</button>
+        </ng-template>
+    </div>
+</form>

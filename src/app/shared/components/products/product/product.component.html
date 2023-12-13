@@ -1,0 +1,25 @@
+
+
+<ul class="list-group my-5 text-center">
+    
+    <li class="list-group-item">
+        This is Product <strong> {{pObj.prodName}}</strong>
+        Having Id <strong> {{pObj.prodId}}</strong>
+        And Status is <strong> {{pObj.ProdStatus}}</strong>
+    </li>
+
+    
+</ul>
+<div class="text-center">
+    <button class="btn btn-primary mr-3"
+    [routerLink]="['editProduct']"
+    [queryParamsHandling]="'preserve'"
+    >Edit Product Details</button>
+
+
+    <button class="btn btn-danger"
+    (click)="onRemoveProduct(pObj.prodId)"
+    >Remove Product </button>
+</div>
+
+

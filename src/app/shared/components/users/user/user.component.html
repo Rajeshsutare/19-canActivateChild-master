@@ -1,0 +1,19 @@
+
+
+<ul class="list-group my-5 text-center">
+    <li class="list-group-item">
+        This is User <strong>{{uObj.userName}}</strong>
+        Having User Id <strong>{{uObj.userId}}</strong>
+        And Role is <strong>{{uObj.editStatus}}</strong>
+    </li>
+</ul>
+
+<div class="text-center">
+    <button class="btn btn-primary mr-3"
+    (click)="onEditUSer()"
+    >Edit User Details</button>
+
+    <button class="btn btn-danger"
+    (click)="onRemoveUser(uObj.userId)"
+    >Remove User </button>
+</div>

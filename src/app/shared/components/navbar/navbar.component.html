@@ -1,0 +1,113 @@
+
+
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" routerLink="dashboard">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item " routerLinkActive="active"
+        >
+          <a class="nav-link" routerLink="dashboard">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item" routerLinkActive="active"> 
+          <a class="nav-link" routerLink="users">Users</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active"> 
+          <a class="nav-link" routerLink="products">Products</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active"> 
+          <a class="nav-link" routerLink="admins">Admins</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active"> 
+          <a class="nav-link" routerLink="superAdmins">Super Admins</a>
+        </li>
+      </ul>
+      <button class="btn btn-warning"
+      (click)="logOut()"
+      >log Out</button>
+    </div>
+  </nav> -->
+
+  <mat-sidenav-container fullscreen>
+    <mat-sidenav #sideNav>
+        <mat-nav-list (click)="sideNav.close()">
+            <a mat-list-item 
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact:true}"
+            routerLink="">
+                <mat-icon></mat-icon>
+                Contents
+            </a>
+            <a mat-list-item
+            routerLinkActive="active"
+            routerLink="dashboard">
+                <mat-icon>home</mat-icon>
+                Home
+            </a>
+            <a mat-list-item 
+            routerLinkActive="active"
+            routerLink="users">
+                <mat-icon>person</mat-icon>
+                Users
+            </a>
+            <a mat-list-item 
+            routerLinkActive="active"
+            routerLink="products">
+                <mat-icon>dashboard</mat-icon>
+                Products
+            </a>
+            <a mat-list-item
+            
+            routerLinkActive="active"
+            routerLink="admins">
+                <mat-icon>
+                  <i class="fa-solid fa-user-plus"></i>
+                </mat-icon>
+                 Admins
+            </a>
+            <a mat-list-item
+            routerLinkActive="active"
+            routerLink="superAdmins">
+                <mat-icon>
+                  <i class="fa-solid fa-user-tie"></i>
+                </mat-icon>
+                SuperAdmins
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+<mat-toolbar color="primary" class="p-0 ml-0">
+    <div class="col-md-6 text-left">
+        <div class="d-sm-none d-block">
+            <button mat-icon-button
+            (click)="sideNav.open()"
+            >
+            <mat-icon>menu</mat-icon>
+            </button>
+        </div>
+    </div>
+   <div class="col-md-6 text-right">
+    <div  class="d-none d-sm-block float-right">
+        <a mat-button 
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact:true}"
+        routerLink=""></a>
+        <a mat-button routerLink="dashboard">Home</a>
+        <a mat-button routerLink="users">Users</a>
+        <a mat-button routerLink="products">Products</a>
+        <a mat-button routerLink="admins">Admins</a>
+        <a mat-button routerLink="superAdmins">SuperAdmins</a>
+        <button mat-raised-button color="warn"
+        class="ml-3"
+        (click)="logOut()"
+        >Log Out</button>
+</div>
+   </div> 
+</mat-toolbar>
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
+</mat-sidenav-container>
+

@@ -1,0 +1,29 @@
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4" >
+            <ul class="list-group my-5 text-center">
+                <li class="list-group-item" *ngFor="let p of productInfo; let firstItem = first"
+                [routerLink]="['/products', p.prodId]"
+                [queryParams]="{canEditProduct:p.ProdStatus}"
+                (click)="isSelected = p.prodId"
+                [ngClass]="
+                {
+                    'active' : isSelected === p.prodId || firstItem  && !isSelected
+                }"
+                >
+                    {{p.prodName}}
+                </li>
+            </ul>
+            <div class="text-center">
+                <button class="btn btn-primary"
+                [routerLink]="['/products','addProduct']"
+                >Add New Product</button>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
