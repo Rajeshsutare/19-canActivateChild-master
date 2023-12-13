@@ -19,6 +19,7 @@ import { passHideShowDirective } from './shared/directives/passwordHideShow';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialsModule } from './shared/materials/materials.module';
 import { SuperAdminsComponent } from './shared/components/super-admins/super-admins.component';
+import { ContactComponent } from './shared/components/contact/contact.component';
 
 
 
@@ -39,6 +40,7 @@ import { SuperAdminsComponent } from './shared/components/super-admins/super-adm
     BlockCopyPasteDirective,
     passHideShowDirective,
     SuperAdminsComponent,
+    ContactComponent,
    
   ],
   imports: [
